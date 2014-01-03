@@ -1,0 +1,6 @@
+# view AndroidManifest.xml #generated:11
+-keep class android.test.InstrumentationTestRunner { <init>(...); }
+
+# view AndroidManifest.xml #generated:4
+-keep class de.markeibes.HorizontalBarChart { <init>(...); }
+

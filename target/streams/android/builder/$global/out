@@ -1,0 +1,16 @@
+[0m[[0mdebug[0m] [0mCustom package for R class: 'de.markeibes'[0m
+[0m[[0mdebug[0m] [0mcommand: /usr/local/Cellar/android-sdk/22.3/build-tools/19.0.1/aapt package -f --no-crunch -I /usr/local/Cellar/android-sdk/22.3/platforms/android-19/android.jar -M /Users/mark/Documents/Markgraf/target/android-bin/AndroidManifest.xml -S /Users/mark/Documents/Markgraf/target/android-bin/resources/res -A /Users/mark/Documents/Markgraf/target/android-bin/assets -m -J /Users/mark/Documents/Markgraf/target/android-gen -G /Users/mark/Documents/Markgraf/target/android-bin/proguard.txt --debug-mode --custom-package de.markeibes[0m
+[0m[[0mdebug[0m] [0mDex library inputs: [/Users/mark/Documents/Markgraf/target/android-bin/classes.jar, /Users/mark/Documents/Markgraf/target/scala-2.10/cache/markgraf/global/proguard_cache/proguard-cache-0b1c0b4caa4e5179cd6e551ff7b90ccd3d276a7e.jar][0m
+[0m[[0mdebug[0m] [0mcommand: /usr/local/Cellar/android-sdk/22.3/build-tools/19.0.1/dx -JXmx1024m --dex --incremental --no-strict --output /Users/mark/Documents/Markgraf/target/android-bin/classes.dex /Users/mark/Documents/Markgraf/target/android-bin/classes.jar /Users/mark/Documents/Markgraf/target/scala-2.10/cache/markgraf/global/proguard_cache/proguard-cache-0b1c0b4caa4e5179cd6e551ff7b90ccd3d276a7e.jar[0m
+[0m[[0mdebug[0m] [0mMerged dex A (24 defs/14,9KiB) with dex B (26 defs/15,0KiB). Result is 27 defs/32,9KiB. Took 0,0s[0m
+[0m[[0mdebug[0m] [0mPackaging markgraf-debug-unaligned.apk[0m
+[0m[[0mdebug[0m] [0m/Users/mark/Documents/Markgraf/target/android-bin/resources-debug.ap_:[0m
+[0m[[0mdebug[0m] [0m=> res/layout/main.xml[0m
+[0m[[0mdebug[0m] [0m=> AndroidManifest.xml[0m
+[0m[[0mdebug[0m] [0m=> resources.arsc[0m
+[0m[[0mdebug[0m] [0m=> res/drawable-hdpi/ic_launcher.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable-ldpi/ic_launcher.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable-mdpi/ic_launcher.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable-xhdpi/ic_launcher.png[0m
+[0m[[0mdebug[0m] [0m/Users/mark/Documents/Markgraf/target/android-bin/classes.dex => classes.dex[0m
+[0m[[0mdebug[0m] [0mNative folder: /Users/mark/Documents/Markgraf/target/android-bin/jni[0m
