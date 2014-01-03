@@ -2,7 +2,7 @@ import android.Keys._
 
 android.Plugin.androidBuild
 
-name := "EXAMPLE" # CHANGE THIS
+name := "markgraf" # CHANGE THIS
 
 platformTarget in Android := "android-19"
 
