@@ -1,10 +1,23 @@
 package de.markeibes
 
 import android.test.ActivityInstrumentationTestCase2
-import de.markeibes.HorizontalBarChart
+import android.app.Activity
+import android.widget.TextView
+import junit.framework.Assert._
 
-/**
- * Created by mark on 03.01.14.
- */
-class HorizontalBarChartTest2() extends ActivityInstrumentationTestCase2[HorizontalBarChart](classOf[HorizontalBarChart]) {
+class HorizontalBarChartTest2 extends ActivityInstrumentationTestCase2[HorizontalBarChart](classOf[HorizontalBarChart]) {
+  lazy val activity = getActivity
+  lazy val tv = activity.findViewById(de.markeibes.R.id.tv).asInstanceOf[TextView]
+
+
+  override def setUp(): Unit = {
+    super.setUp()
+    setActivityInitialTouchMode(false)
+    assert(activity!=null)
+    assert(tv!=null)
+  }
+
+  def testPreConditions() = {
+    assertEquals("Shit", tv.getText.toString)
+  }
 }
