@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<de.markeibes.markgraf.MarkgrafHorizontalScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:markgraf="http://schemas.android.com/apk/res/de.markeibes.markgraf"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
+    <de.markeibes.markgraf.MarkgrafScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:markgraf="http://schemas.android.com/apk/res/de.markeibes.markgraf"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bgblurred"
+            >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="Title of this graph" android:textSize="40sp"
+            />
         <de.markeibes.markgraf.HorizontalBarChartView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="30dp"
                 android:id="@+id/horiz_bc_view"
-                markgraf:barColor="@android:color/holo_red_dark"
                 markgraf:textColor="@android:color/white"
                 markgraf:barHeight="40dip"
-                markgraf:captionTextSize="19sp"
-                markgraf:valueTextSize="19sp"
-                markgraf:barDrawable="@drawable/turquoise_gradient"
+                markgraf:textSize="19sp"
+                markgraf:barDrawable="@drawable/bar_style"
                 />
-</de.markeibes.markgraf.MarkgrafHorizontalScrollView>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="This is some basic bar chart." android:textSize="20sp"
+            />
+
+        </LinearLayout>
+</de.markeibes.markgraf.MarkgrafScrollView>

@@ -10,6 +10,8 @@ scalaVersion := "2.10.3"
  
 scalacOptions in Compile += "-feature"
 
+//libraryDependencies += "com.google.guava" % "guava" % "r09"
+
 proguardOptions in Android ++= Seq(
   "-keep public class * extends junit.framework.TestCase",
   "-keepclassmembers class * extends junit.framework.TestCase { *; }"

@@ -7,11 +7,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ScrollView;
 
-public class MarkgrafHorizontalScrollView extends ScrollView {
+public class MarkgrafScrollView extends ScrollView {
     private GestureDetector mGestureDetector;
     View.OnTouchListener mGestureListener;
 
-    public MarkgrafHorizontalScrollView(Context context, AttributeSet attrs) {
+    public MarkgrafScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mGestureDetector = new GestureDetector(context, new YScrollDetector());
         setFadingEdgeLength(0);

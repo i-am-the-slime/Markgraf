@@ -6,7 +6,7 @@ For the moment there is only HorizontalBarChartView which can be used like this:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<de.markeibes.markgraf.MarkgrafHorizontalScrollView
+<de.markeibes.markgraf.MarkgrafScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:markgraf="http://schemas.android.com/apk/res/de.markeibes.markgraf"
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@ For the moment there is only HorizontalBarChartView which can be used like this:
                 markgraf:valueTextSize="19sp"
                 markgraf:barDrawable="@drawable/turquoise_gradient"
                 />
-</de.markeibes.markgraf.MarkgrafHorizontalScrollView>
+</de.markeibes.markgraf.MarkgrafScrollView>
 ```
 
 
