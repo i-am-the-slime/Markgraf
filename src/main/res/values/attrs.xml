@@ -6,5 +6,6 @@
         <attr name="barHeight" format="dimension"/>
         <attr name="captionTextSize" format="dimension"/>
         <attr name="valueTextSize" format="dimension"/>
+        <attr name="barDrawable" format="reference"/>
     </declare-styleable>
 </resources>

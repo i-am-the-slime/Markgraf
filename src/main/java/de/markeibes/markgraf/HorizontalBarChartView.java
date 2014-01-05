@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import de.markeibes.markgraf.HorizontalBarChart;
 
@@ -51,14 +52,21 @@ public class HorizontalBarChartView extends View
         setMeasuredDimension(msW, msH);
     }
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return hbc.onTouchEvent(event);
+    }
+
     public void setTypeface(Typeface tf){
         hbc.setTypeface(tf);
     }
 
+    int[] location = {0,0};
+
     @Override
     protected void onDraw(Canvas canvas) {
-        Log.e("markgraf", "ondraw");
-        hbc.onDraw(canvas);
+        getLocationOnScreen(location);
+        hbc.onDraw(canvas, location[1]);
     }
 
 }
