@@ -139,8 +139,8 @@ class HorizontalBarChart(val ctx:Context, as:AttributeSet, style:Integer, val v:
   def onDraw(c:Canvas, offset:Int) {
     v.getWindowVisibleDisplayFrame(visibleRect)
     Log.e("Markgraf", "\nTop: " + visibleRect.top + "\nBottom: " + visibleRect.bottom)
-    data.foldLeft(new Rect(0, 0, 0, barHeight.toInt))( (rect,dataPoint) => {
-      rect.right = (dataPoint.value/maxValue*mWidth).toInt
+    data.foldLeft(new Rect(v.getPaddingLeft, v.getPaddingTop, 0, barHeight.toInt+v.getPaddingTop))( (rect,dataPoint) => {
+      rect.right = (dataPoint.value/maxValue*mWidth).toInt - v.getPaddingRight
       if(barDrawable!=null){
         barDrawable.setBounds(rect)
         barDrawable.draw(c)
@@ -149,9 +149,9 @@ class HorizontalBarChart(val ctx:Context, as:AttributeSet, style:Integer, val v:
       }
 
         if(captionTextSize>20 && !scaling)
-          c.drawText(dataPoint.label, 0+captionTextSize*0.2f, barHeight+rect.top-captionTextSize-captionTextPaint.ascent()/3, captionTextPaint)
+          c.drawText(dataPoint.label, captionTextSize*0.2f+v.getPaddingLeft, barHeight+rect.top-captionTextSize-captionTextPaint.ascent()/3, captionTextPaint)
         if(valueTextSize>20 && !scaling)
-          c.drawText("%3.0f" format dataPoint.value, mWidth-valueTextSize*0.2f, barHeight+rect.top-valueTextSize-valueTextPaint.ascent()/3, valueTextPaint)
+          c.drawText("%3.0f" format dataPoint.value, mWidth-valueTextSize*0.2f-v.getPaddingRight, barHeight+rect.top-valueTextSize-valueTextPaint.ascent()/3, valueTextPaint)
         if(captionTextSize>30){
           rect.top+= (offsetFactor*barHeight).toInt
           rect.bottom += (offsetFactor*barHeight).toInt

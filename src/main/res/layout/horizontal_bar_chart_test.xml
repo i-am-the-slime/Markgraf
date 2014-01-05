@@ -12,7 +12,7 @@
                 android:id="@+id/horiz_bc_view"
                 markgraf:barColor="@android:color/holo_red_dark"
                 markgraf:textColor="@android:color/white"
-                markgraf:barHeight="50dip"
+                markgraf:barHeight="40dip"
                 markgraf:captionTextSize="19sp"
                 markgraf:valueTextSize="19sp"
                 markgraf:barDrawable="@drawable/turquoise_gradient"
