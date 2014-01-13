@@ -5,7 +5,6 @@
             xmlns:markgraf="http://schemas.android.com/apk/res/de.markeibes.markgraf"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bgblurred"
             >
 
         <LinearLayout
@@ -13,20 +12,22 @@
             android:orientation="vertical"
             android:layout_height="match_parent">
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:text="Title of this graph" android:textSize="40sp"
+              android:text="Nagerienensis" android:textSize="40sp"
+              android:layout_marginTop="10dip"
+              android:layout_marginBottom="6dip"
+              android:layout_gravity="center"
+              android:id="@+id/title"
             />
         <de.markeibes.markgraf.HorizontalBarChartView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/horiz_bc_view"
-                markgraf:textColor="@android:color/white"
-                markgraf:barHeight="40dip"
-                markgraf:textSize="19sp"
+                android:layout_marginLeft="12dip"
+                android:layout_marginRight="20dip"
+                markgraf:textColor="#FFFFFF"
+                markgraf:barHeight="30dip"
+                markgraf:textSize="20sp"
                 markgraf:barDrawable="@drawable/bar_style"
                 />
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:text="This is some basic bar chart." android:textSize="20sp"
-            />
-
         </LinearLayout>
 </de.markeibes.markgraf.MarkgrafScrollView>

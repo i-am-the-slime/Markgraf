@@ -1,9 +1,9 @@
 package de.markeibes.markgraf;
 
-public class DataPoint {
-    public final String label;
-    public final Float value;
-    public DataPoint(String label, Float value){
+public class DataPoint<A,B> {
+    public final A label;
+    public final B value;
+    public DataPoint(A label, B value){
         this.label = label;
         this.value = value;
     }

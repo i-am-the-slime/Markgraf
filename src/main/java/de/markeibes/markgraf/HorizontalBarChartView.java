@@ -33,7 +33,7 @@ public class HorizontalBarChartView extends View
     private float scale = 1.0f;
 
     //Data
-    private List<DataPoint> data = new ArrayList<DataPoint>();
+    private List<DataPoint<String, Float>> data = new ArrayList<DataPoint<String, Float>>();
     private float largestDataPoint = 0;
     private int numberOfDataPoints = 0;
 
@@ -86,10 +86,10 @@ public class HorizontalBarChartView extends View
         }
     }
 
-    public void setData(List<DataPoint> dataPoints) {
+    public void setData(ArrayList<DataPoint<String, Float>> dataPoints) {
         data = dataPoints;
         largestDataPoint = 0;
-        for(DataPoint p : dataPoints){
+        for(DataPoint<String, Float> p : dataPoints){
             if(p.value > largestDataPoint){
                 largestDataPoint = p.value;
             }
@@ -133,12 +133,12 @@ public class HorizontalBarChartView extends View
         @Override
         public boolean onScale(ScaleGestureDetector detector) {
             float f = detector.getScaleFactor();
-            if(numberOfDataPoints>0 && scale*f <= 1.0f && scale*f > 0.25f){
-                scale *= f;
-                labelTextPaint.setTextSize(textSize*scale);
-                valueTextPaint.setTextSize(textSize*scale);
-                requestLayout();
-            }
+            if(scale*f > 1.0f) f=1/scale;
+            if(scale*f < 0.25f) f=0.25f/scale;
+            scale *= f;
+            labelTextPaint.setTextSize(textSize*scale);
+            valueTextPaint.setTextSize(textSize*scale);
+            requestLayout();
             return super.onScale(detector);
         }
 
@@ -155,14 +155,20 @@ public class HorizontalBarChartView extends View
         r.top =  getPaddingTop();
         r.bottom = (int)(barHeight*scale)+getPaddingTop();
 
-        for(DataPoint p : data) {
+        for(DataPoint<String, Float> p : data) {
             r.right = (int)(p.value/largestDataPoint*(mWidth-getPaddingLeft()-getPaddingRight())) + getPaddingRight();
             barDrawable.setBounds(r);
             barDrawable.draw(c);
 
             if(textSize*scale>10 && !scaling){
-                c.drawText(p.label, scale*textSize*0.2f+getPaddingLeft(), scale*barHeight+r.top-textSize*scale-labelTextPaint.ascent()/3, labelTextPaint);
-                c.drawText(p.value.toString(), mWidth-getPaddingRight()-0.2f*textSize, scale*barHeight+r.top-textSize*scale-valueTextPaint.ascent()/3, valueTextPaint);
+                c.drawText(p.label,
+                        scale*textSize*0.2f+getPaddingLeft(),
+                        scale*barHeight+r.top+(valueTextPaint.ascent() +labelTextPaint.descent())/2,
+                        labelTextPaint);
+                c.drawText(p.value.toString(),
+                        mWidth-getPaddingRight()-0.2f*textSize,
+                        scale*barHeight+r.top+(valueTextPaint.ascent() +valueTextPaint.descent())/2,
+                        valueTextPaint);
             }
             if(textSize*scale>30){
                 r.top += (int)(offsetFactor*barHeight*scale);

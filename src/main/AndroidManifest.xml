@@ -6,7 +6,7 @@
     <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19"/>
     <application android:label="@string/app_name"
                  android:icon="@drawable/ic_launcher" >
-        <activity android:name=".test.TestActivity"
+        <activity android:name=".test.TestCalendarActivity"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
